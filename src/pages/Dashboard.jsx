@@ -1,9 +1,9 @@
 import axios from "axios";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
-// Backend API URL from environment variable
-const API_URL = process.env.REACT_APP_API_URL;
+// Backend API URL from environment variable (Vite style)
+const API_URL = import.meta.env.VITE_API_URL;
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState("list");
@@ -43,7 +43,7 @@ const Dashboard = () => {
       toast.success(res.data.message);
       setFormData({ title: "", category: "", description: "", image: null });
     } catch (error) {
-      toast.error(error.message);
+      toast.error(error.response?.data?.message || error.message);
     }
   };
 

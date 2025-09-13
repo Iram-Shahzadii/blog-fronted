@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const BlogCard = ({ id, title, category, image, author_name, author_image, date }) => {
-  const API_URL = process.env.REACT_APP_API_URL;
+   const API_URL = import.meta.env.VITE_API_URL;
 
   return (
     <div className="border border-gray-200 shadow-md rounded-md overflow-hidden bg-white">

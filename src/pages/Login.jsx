@@ -11,7 +11,6 @@ const Login = () => {
   });
 
   const { loginUser } = useContext(StoreContext);
-  const token = localStorage.getItem("token");
 
   const onChangeHandler = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -20,12 +19,15 @@ const Login = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
+  // ✅ API URL from Vite environment
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
       setLoading(true);
       const res = await axios.post(
-        `${process.env.REACT_APP_API_URL}/users/login`,
+        `${API_URL}/users/login`,
         formData,
         {
           headers: {
@@ -39,9 +41,11 @@ const Login = () => {
         loginUser(user, token);
         toast.success(res.data.message);
         navigate("/");
+      } else {
+        toast.error(res.data.message || "Login failed");
       }
     } catch (error) {
-      toast.error(error.message);
+      toast.error(error.response?.data?.message || error.message);
     } finally {
       setLoading(false);
     }
@@ -50,7 +54,7 @@ const Login = () => {
   return (
     <div>
       <div className="w-full bg-pink-200 py-12 mx-auto flex items-center justify-center">
-        <div className="w-full bg-white max-w-md p-5 mx-auto py-6 border-1 border-gray-200 shadow:md">
+        <div className="w-full bg-white max-w-md p-5 mx-auto py-6 border border-gray-200 shadow-md rounded">
           <h1 className="text-lg font-bold text-center text-gray-700">
             Login into your account!
           </h1>
@@ -73,8 +77,12 @@ const Login = () => {
               className="w-full p-2 border border-gray-300 rounded outline-none"
               required
             />
-            <button className="bg-orange-600 text-white px-6 py-2 w-full cursor-pointer">
-              Signin
+            <button
+              type="submit"
+              disabled={loading}
+              className="bg-orange-600 text-white px-6 py-2 w-full cursor-pointer rounded hover:bg-orange-700 transition"
+            >
+              {loading ? "Signing in..." : "Signin"}
             </button>
           </form>
           <p className="text-center mt-4">
