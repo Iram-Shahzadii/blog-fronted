@@ -1,12 +1,32 @@
-# React + Vite
+# 🎨 Blog Frontend  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the **frontend** of the Full Stack MERN Blog Application, built with **React.js**.  
+It provides a modern and responsive user interface for creating, editing, and reading blogs.  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ⚙️ Features  
+- 📝 User-friendly UI for blog creation and reading  
+- 🔐 Integrated with backend authentication APIs  
+- 📱 Fully responsive design  
+- 🌐 Deployed with Vercel  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack  
+- React.js  
+- Axios  
+- Tailwind CSS / CSS  
+
+---
+
+## 🔗 Links  
+- 🚀 **Live Demo:** [Open Blog App](https://blog-fronted-us5j-2hz6fusuh-iram-shahzadiis-projects.vercel.app/)  
+- 🗂️ **Backend Repo:** [blog-backend](https://github.com/Iram-Shahzadii/blog-backend)  
+
+---
+## 👩‍💻 Author  
+Made with ❤️ by *Iram Shahzadi*  
+- [GitHub](https://github.com/Iram-Shahzadii)  
+- [LinkedIn](https://www.linkedin.com/in/iram-shahzadi-5294a6329/)
+
