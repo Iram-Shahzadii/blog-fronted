@@ -1,4 +1,4 @@
-# 🎨 Blog Frontend  
+##🎨 Blog Frontend  
 
 This is the **frontend** of the Full Stack MERN Blog Application, built with **React.js**.  
 It provides a modern and responsive user interface for creating, editing, and reading blogs.  
